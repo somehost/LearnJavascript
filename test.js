@@ -1,3 +1,5 @@
 util.print(["Hello"]);
 
-// Test new
+var house = new child.stdout();
+
+// Test new house
