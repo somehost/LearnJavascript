@@ -1,0 +1,53 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"tab_size": 2,
+		"translate_tabs_to_spaces": true,
+		"trim_trailing_white_space_on_save": true,
+		"default_line_ending": "unix"
+	},
+	"build_systems":
+	[
+		{
+			"name": "NPM",
+			"cmd": ["npm.cmd", "start"],
+			"working_dir": "${file_path}",
+			//"shell": true
+	},
+		{
+			"name": "Node",
+			"cmd": ["node.exe", "${file}"],
+			"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+			"working_dir": "${file_path}",
+			"selector": "source.js",
+			"variants":
+			[
+				{
+					"name": "Run",
+					"cmd":["node.exe", "${file}"]
+				}
+			]
+		},
+		{
+			"name": "Nodemon",
+			"cmd": ["nodemon.cmd", "${file}"],
+			"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+			"working_dir": "${file_path}",
+			"selector": "source.js",
+			"variants":
+			[
+				{
+					"name": "Run",
+					"cmd":["node.exe", "${file}"]
+				}
+			]
+		}
+	]
+}
